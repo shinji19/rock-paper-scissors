@@ -5,5 +5,7 @@ services:
     volumes:
       - ./:/opt/rock-paper-scissors
     working_dir: /opt/rock-paper-scissors
+    ports:
+      - "5176:5176"
     tty: true
     init: true
