@@ -1,0 +1,371 @@
+[
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "_forceCloseInterval",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "constructor"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "string",
+        "name": "id",
+        "type": "string"
+      }
+    ],
+    "name": "Close",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "string",
+        "name": "id",
+        "type": "string"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "deposit",
+        "type": "uint256"
+      }
+    ],
+    "name": "Create",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "string",
+        "name": "id",
+        "type": "string"
+      },
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "host",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "opponent",
+        "type": "address"
+      }
+    ],
+    "name": "Entry",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "string",
+        "name": "id",
+        "type": "string"
+      }
+    ],
+    "name": "ForceClose",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "string",
+        "name": "id",
+        "type": "string"
+      },
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "winner",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "enum RockPaperScissors.Hand",
+        "name": "hostHand",
+        "type": "uint8"
+      },
+      {
+        "indexed": false,
+        "internalType": "enum RockPaperScissors.Hand",
+        "name": "opponentHand",
+        "type": "uint8"
+      }
+    ],
+    "name": "Judge",
+    "type": "event"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "id",
+        "type": "string"
+      }
+    ],
+    "name": "close",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "",
+        "type": "string"
+      }
+    ],
+    "name": "competitionMap",
+    "outputs": [
+      {
+        "internalType": "string",
+        "name": "Id",
+        "type": "string"
+      },
+      {
+        "internalType": "address payable",
+        "name": "Host",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "Deposit",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "ForceClosableTimeStamp",
+        "type": "uint256"
+      },
+      {
+        "internalType": "bytes32",
+        "name": "HostHandHash",
+        "type": "bytes32"
+      },
+      {
+        "internalType": "enum RockPaperScissors.Hand",
+        "name": "HostHand",
+        "type": "uint8"
+      },
+      {
+        "internalType": "address payable",
+        "name": "Opponent",
+        "type": "address"
+      },
+      {
+        "internalType": "enum RockPaperScissors.Hand",
+        "name": "OpponentHand",
+        "type": "uint8"
+      },
+      {
+        "internalType": "address payable",
+        "name": "Winner",
+        "type": "address"
+      },
+      {
+        "internalType": "enum RockPaperScissors.Status",
+        "name": "Status",
+        "type": "uint8"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "name": "competitionUUIDs",
+    "outputs": [
+      {
+        "internalType": "string",
+        "name": "",
+        "type": "string"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "id",
+        "type": "string"
+      },
+      {
+        "internalType": "bytes32",
+        "name": "hostHandHash",
+        "type": "bytes32"
+      }
+    ],
+    "name": "create",
+    "outputs": [],
+    "stateMutability": "payable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "id",
+        "type": "string"
+      },
+      {
+        "internalType": "enum RockPaperScissors.Hand",
+        "name": "opponentHand",
+        "type": "uint8"
+      }
+    ],
+    "name": "entry",
+    "outputs": [],
+    "stateMutability": "payable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "id",
+        "type": "string"
+      }
+    ],
+    "name": "forceClose",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "forceCloseInterval",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "page",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "size",
+        "type": "uint256"
+      }
+    ],
+    "name": "getCompetitions",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "string",
+            "name": "Id",
+            "type": "string"
+          },
+          {
+            "internalType": "address payable",
+            "name": "Host",
+            "type": "address"
+          },
+          {
+            "internalType": "uint256",
+            "name": "Deposit",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "ForceClosableTimeStamp",
+            "type": "uint256"
+          },
+          {
+            "internalType": "bytes32",
+            "name": "HostHandHash",
+            "type": "bytes32"
+          },
+          {
+            "internalType": "enum RockPaperScissors.Hand",
+            "name": "HostHand",
+            "type": "uint8"
+          },
+          {
+            "internalType": "address payable",
+            "name": "Opponent",
+            "type": "address"
+          },
+          {
+            "internalType": "enum RockPaperScissors.Hand",
+            "name": "OpponentHand",
+            "type": "uint8"
+          },
+          {
+            "internalType": "address payable",
+            "name": "Winner",
+            "type": "address"
+          },
+          {
+            "internalType": "enum RockPaperScissors.Status",
+            "name": "Status",
+            "type": "uint8"
+          }
+        ],
+        "internalType": "struct RockPaperScissors.Competition[]",
+        "name": "",
+        "type": "tuple[]"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "id",
+        "type": "string"
+      },
+      {
+        "internalType": "enum RockPaperScissors.Hand",
+        "name": "hostHand",
+        "type": "uint8"
+      },
+      {
+        "internalType": "string",
+        "name": "secret",
+        "type": "string"
+      }
+    ],
+    "name": "judge",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  }
+]
