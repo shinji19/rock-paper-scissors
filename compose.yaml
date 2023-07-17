@@ -1,0 +1,9 @@
+version: "3.9"
+services:
+  frontend:
+    image: node:20.3.0
+    volumes:
+      - ./:/opt/rock-paper-scissors
+    working_dir: /opt/rock-paper-scissors
+    tty: true
+    init: true
